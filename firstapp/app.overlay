@@ -1,0 +1,20 @@
+/* 1. MANDATORY: Import the driver flag mappings so the parser understands "GPIO_ACTIVE_HIGH" */
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		/* 2. Link your C code alias nickname to our custom hardware label */
+		led = &internalled;
+	};
+
+	/* 3. Create the container node explicitly at the root level */
+	leds {
+		compatible = "gpio-leds";
+		
+		/* 4. Map the physical pin to GPIO Bank B, Pin 2 */
+		internalled: ledboard {
+			gpios = <&gpiob 2 GPIO_ACTIVE_HIGH>;
+			label = "internal-led";
+		};
+	};
+};
