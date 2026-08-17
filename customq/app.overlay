@@ -1,0 +1,13 @@
+/{
+    aliases{
+        led=&status_led;
+    };
+
+    leds{
+        compatible="gpio-leds";
+        status_led:led{
+            label="red";
+            gpios=<&gpio0 2 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};
