@@ -17,14 +17,14 @@ static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED,gpios);
 
 void thread_a(void* p1,void* p2,void* p3){
     while(1){
-        LOG_INF("I AM THREAD A ----------------------------------");
+        LOG_INF("I AM THREAD A");
         k_msleep(1000);
     }
 }
 
 void thread_b(void* p1,void* p2,void* p3){
     k_sched_lock();
-    LOG_INF("i am THREAD b --------------------------------------------");
+    LOG_INF("i am THREAD b");
     gpio_pin_toggle_dt(&led);
     k_msleep(2000);
     LOG_INF("I AM EXIT");
