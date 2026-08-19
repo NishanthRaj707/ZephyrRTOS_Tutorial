@@ -23,6 +23,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [sync](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/sync) | **Synchronization & Inter-Thread IPC** | Semaphores (`k_sem`), Mutexes (`k_mutex`), Events (`k_event`), Message Queues (`k_msgq`) |
 | 📁 [workqueue](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/workqueue) | **System Workqueue** | `K_WORK_DEFINE`, `k_work_submit`, `CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE` |
 | 📁 [customq](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/customq) | **Custom User Workqueue** | `k_work_queue_init`, `k_work_queue_start`, `k_work_submit_to_queue`, `CONTAINER_OF` |
+| 📁 [fifo](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/fifo) | **First-In, First-Out Queue IPC** | `K_FIFO_DEFINE`, `k_fifo_put`, `k_fifo_get`, Producer-Consumer multithreading |
 
 ---
 
