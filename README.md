@@ -18,6 +18,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | :--- | :--- | :--- |
 | 📁 [firstapp](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/firstapp) | **Basic Application & GPIO Control** | Devicetree overlays (`app.overlay`), GPIO driver (`gpio_pin_toggle_dt`), kernel sleep (`k_msleep`) |
 | 📁 [hwins](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/hwins) | **Hardware & Kconfig Inspector** | `IS_ENABLED()`, compile-time Kconfig queries (`CONFIG_ARM`, etc.), Devicetree property macros (`DT_PROP`), UART `printk` |
+| 📁 [interrupt](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/interrupt) | **GPIO Interrupts & Deferred Workqueue** | `gpio_pin_interrupt_configure_dt`, `gpio_add_callback`, `K_WORK_DELAYABLE_DEFINE`, `k_work_reschedule`, Software Debouncing |
 | 📁 [threadeg](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/threadeg) | **Multithreading & Thread Priorities** | Static thread creation (`K_THREAD_DEFINE`), Cooperative (negative priority) vs. Preemptive (positive priority) scheduling |
 | 📁 [schedule](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/schedule) | **Kernel Scheduler & Timeslicing** | `k_sched_lock()`, `k_sched_unlock()`, Round-Robin timeslicing (`CONFIG_TIMESLICING`), Zephyr Logger Subsystem |
 | 📁 [sync](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/sync) | **Synchronization & Inter-Thread IPC** | Semaphores (`k_sem`), Mutexes (`k_mutex`), Events (`k_event`), Message Queues (`k_msgq`) |
@@ -33,7 +34,7 @@ This repository is designed with a **standardized, scalable folder structure**. 
 
 ### Future Expansion Topics (Planned / Extensible)
 - ⏱️ **Timers & Workqueues**: Hardware timers (`k_timer`), system workqueues (`k_work`), delayed work routines.
-- ⚡ **Interrupt Service Routines (ISRs)**: Direct & Zero-latency ISR handling, deferred processing.
+- ⚡ **Zero-Latency Interrupts**: Direct & Zero-latency ISR handling, nested interrupts.
 - 💾 **Memory Management**: Memory Slabs (`k_mem_slab`), Heap memory allocation (`k_malloc`).
 - 📡 **Hardware Communication Drivers**: UART interrupts, I2C sensor drivers, SPI communication.
 - 🌐 **Advanced Networking & Wireless**: BLE (Bluetooth Low Energy), TCP/IP stack integration.
