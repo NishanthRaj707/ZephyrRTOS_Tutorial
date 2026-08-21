@@ -25,6 +25,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [workqueue](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/workqueue) | **System Workqueue** | `K_WORK_DEFINE`, `k_work_submit`, `CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE` |
 | 📁 [customq](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/customq) | **Custom User Workqueue** | `k_work_queue_init`, `k_work_queue_start`, `k_work_submit_to_queue`, `CONTAINER_OF` |
 | 📁 [fifo](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/fifo) | **First-In, First-Out Queue IPC** | `K_FIFO_DEFINE`, `k_fifo_put`, `k_fifo_get`, Producer-Consumer multithreading |
+| 📁 [memslab](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/memslab) | **Memory Slab Allocation & IPC** | `K_MEM_SLAB_DEFINE`, `k_mem_slab_alloc`, `k_mem_slab_free`, `k_fifo` zero-copy messaging |
 
 ---
 
@@ -35,7 +36,7 @@ This repository is designed with a **standardized, scalable folder structure**. 
 ### Future Expansion Topics (Planned / Extensible)
 - ⏱️ **Timers & Workqueues**: Hardware timers (`k_timer`), system workqueues (`k_work`), delayed work routines.
 - ⚡ **Zero-Latency Interrupts**: Direct & Zero-latency ISR handling, nested interrupts.
-- 💾 **Memory Management**: Memory Slabs (`k_mem_slab`), Heap memory allocation (`k_malloc`).
+- 💾 **Advanced Memory Management**: Heap memory allocation (`k_malloc`), Mailboxes (`k_mbox`).
 - 📡 **Hardware Communication Drivers**: UART interrupts, I2C sensor drivers, SPI communication.
 - 🌐 **Advanced Networking & Wireless**: BLE (Bluetooth Low Energy), TCP/IP stack integration.
 
