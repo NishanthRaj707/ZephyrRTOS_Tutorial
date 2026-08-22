@@ -2,6 +2,7 @@
 #include <zephyr/logging/log.h>
 #include <zephyr/drivers/uart.h>
 #include <zephyr/drivers/gpio.h>
+#include <zephyr/sys/ring_buffer.h>
 #include <strings.h>
 #include <ctype.h>
 
@@ -15,7 +16,7 @@
 LOG_MODULE_REGISTER(app, LOG_LEVEL_INF);
 
 K_SEM_DEFINE(rx_sem, 0, 1);
-K_RING_BUF_DECLARE(rx_buf, 256);
+RING_BUF_DECLARE(rx_buf, 256);
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 static const struct device *const uart = DEVICE_DT_GET(UART_NODE);

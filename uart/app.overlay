@@ -1,24 +1,26 @@
-/{
-    aliases{
-        led=&status-led;
-        commuart=&uartdev;
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+    aliases {
+        led = &status_led;
+        commuart = &uart0;
     };
 
-    leds{
-        compatible="gpio-leds";
+    leds {
+        compatible = "gpio-leds";
         
-        status-led:led_0{
-            label="Status led";
-            gpios=<&gpio0 2 GPIO_ACTIVE_HIGH>;
+        status_led: led_0 {
+            label = "Status led";
+            gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
         };
-
     };
-    chosen{
-        zephyr,console=&uartdev;
+
+    chosen {
+        zephyr,console = &uart0;
     };
 };
 
-uartdev:&uart0{
-    status="OKAY";
-    current-speed=115200;
+&uart0 {
+    status = "okay";
+    current-speed = <115200>;
 };
