@@ -1,0 +1,24 @@
+/{
+    aliases{
+        led=&status-led;
+        commuart=&uartdev;
+    };
+
+    leds{
+        compatible="gpio-leds";
+        
+        status-led:led_0{
+            label="Status led";
+            gpios=<&gpio0 2 GPIO_ACTIVE_HIGH>;
+        };
+
+    };
+    chosen{
+        zephyr,console=&uartdev;
+    };
+};
+
+uartdev:&uart0{
+    status="OKAY";
+    current-speed=115200;
+};

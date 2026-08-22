@@ -26,6 +26,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [customq](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/customq) | **Custom User Workqueue** | `k_work_queue_init`, `k_work_queue_start`, `k_work_submit_to_queue`, `CONTAINER_OF` |
 | 📁 [fifo](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/fifo) | **First-In, First-Out Queue IPC** | `K_FIFO_DEFINE`, `k_fifo_put`, `k_fifo_get`, Producer-Consumer multithreading |
 | 📁 [memslab](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/memslab) | **Memory Slab Allocation & IPC** | `K_MEM_SLAB_DEFINE`, `k_mem_slab_alloc`, `k_mem_slab_free`, `k_fifo` zero-copy messaging |
+| 📁 [uart](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/uart) | **Interrupt-Driven UART & CLI Parsing** | `uart_irq_callback_set`, `ring_buf_put`, `k_sem`, `strcasecmp` CLI command parser |
 
 ---
 
