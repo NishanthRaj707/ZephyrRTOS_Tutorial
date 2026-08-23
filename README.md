@@ -27,6 +27,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [fifo](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/fifo) | **First-In, First-Out Queue IPC** | `K_FIFO_DEFINE`, `k_fifo_put`, `k_fifo_get`, Producer-Consumer multithreading |
 | 📁 [memslab](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/memslab) | **Memory Slab Allocation & IPC** | `K_MEM_SLAB_DEFINE`, `k_mem_slab_alloc`, `k_mem_slab_free`, `k_fifo` zero-copy messaging |
 | 📁 [uart](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/uart) | **Interrupt-Driven UART & CLI Parsing** | `uart_irq_callback_set`, `ring_buf_put`, `k_sem`, `strcasecmp` CLI command parser |
+| 📁 [i2c](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/i2c) | **I2C Bus & Sensor Communication** | `i2c_dt_spec`, `i2c_write_read_dt`, `i2c_is_ready_dt`, `k_mutex` thread safety |
 
 ---
 
