@@ -28,6 +28,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [memslab](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/memslab) | **Memory Slab Allocation & IPC** | `K_MEM_SLAB_DEFINE`, `k_mem_slab_alloc`, `k_mem_slab_free`, `k_fifo` zero-copy messaging |
 | 📁 [uart](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/uart) | **Interrupt-Driven UART & CLI Parsing** | `uart_irq_callback_set`, `ring_buf_put`, `k_sem`, `strcasecmp` CLI command parser |
 | 📁 [i2c](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/i2c) | **I2C Bus & Sensor Communication** | `i2c_dt_spec`, `i2c_write_read_dt`, `i2c_is_ready_dt`, `k_mutex` thread safety |
+| 📁 [spi](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/spi) | **SPI Master & Sensor Communication** | `spi_dt_spec`, `spi_transceive_dt`, `spi_is_ready_dt`, `k_mutex` thread safety |
 
 ---
 
