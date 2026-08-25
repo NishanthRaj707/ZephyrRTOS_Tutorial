@@ -29,6 +29,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [uart](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/uart) | **Interrupt-Driven UART & CLI Parsing** | `uart_irq_callback_set`, `ring_buf_put`, `k_sem`, `strcasecmp` CLI command parser |
 | 📁 [i2c](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/i2c) | **I2C Bus & Sensor Communication** | `i2c_dt_spec`, `i2c_write_read_dt`, `i2c_is_ready_dt`, `k_mutex` thread safety |
 | 📁 [spi](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/spi) | **SPI Master & Sensor Communication** | `spi_dt_spec`, `spi_transceive_dt`, `spi_is_ready_dt`, `k_mutex` thread safety |
+| 📁 [pwm](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/pwm) | **Pulse-Width Modulation & LED Fading** | `pwm_dt_spec`, `pwm_set_pulse_dt`, `pwm_is_ready_dt`, `pwm-leds` binding |
 
 ---
 
