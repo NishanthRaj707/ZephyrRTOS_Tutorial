@@ -31,6 +31,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [spi](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/spi) | **SPI Master & Sensor Communication** | `spi_dt_spec`, `spi_transceive_dt`, `spi_is_ready_dt`, `k_mutex` thread safety |
 | 📁 [pwm](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/pwm) | **Pulse-Width Modulation & LED Fading** | `pwm_dt_spec`, `pwm_set_pulse_dt`, `pwm_is_ready_dt`, `pwm-leds` binding |
 | 📁 [nvs](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/nvs) | **Non-Volatile Storage (NVS) & Key-Value Flash** | `nvs_mount`, `nvs_read`, `nvs_write`, `FIXED_PARTITION_DEVICE`, Flash Map |
+| 📁 [ble](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/ble) | **Bluetooth Low Energy (BLE) Peripheral & GATT** | `bt_enable`, `bt_adv_start`, `BT_GATT_SERVICE_DEFINE`, `bt_gatt_attr_read` |
 
 ---
 
