@@ -1,0 +1,18 @@
+description : Custom counter driver for learning zephyr RTOS
+
+compatible : bava,counter
+
+include : [base.yaml]
+
+properties:
+  start-offset: 
+    type : int
+    required : true
+    description : the initial integer value to start
+
+  step-size:
+    type : int
+    required : false
+    default : 1
+    description : the step size for every count
+
