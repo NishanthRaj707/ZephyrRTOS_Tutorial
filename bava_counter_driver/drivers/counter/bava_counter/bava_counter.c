@@ -17,34 +17,46 @@ struct bava_counter_data{
     struct k_mutex* lock;
 };
 
-bava_counter_get_t bava_get(const struct device* dev,int* val)
+static int bava_get(const struct device* dev,int* val)
 {
     const struct bava_counter_config config = dev->config;
-    const struct bava_counter_data data = dev->data;
+    struct bava_counter_data data = dev->data;
+
+    if(val == NULL)
+    {
+        return -EINVAL;
+    }
 
     k_mutex_lock(data->lock,K_FOREVER);
 
     *val=data->counter;
     data->counter += config->step_size;
-
     k_mutex_unlock(data->unlock);
 
-    return current_data
+    return 0;
+
 } 
 
-bava_counter_reset_t bava_reset(const struct device* dev)
+static int bava_reset(const struct device* dev)
 {
     const struct bava_counter_config config = dev->config;
-    const struct bava_counter_data data = dev->data;
+    struct bava_counter_data data = dev->data;
 
     k_mutex_lock(data->lock,K_FOREVER);
 
     data->counter = config->start_offset;
-
     k_mutex_unlock(data->lock);
+
+    LOG_INF("RESETTING ENTIRE SYSTEM");
+    
+    return 1;
+
 }
 
-
+static const struct bava_counter_api bava_api={
+    .get=bava_get,
+    .reset=bava_reset
+};
 
 static int bava_counter_init(const struct device* dev)
 {
@@ -57,9 +69,6 @@ static int bava_counter_init(const struct device* dev)
         return 1;
     }
 
-    api->get = bava_get;
-    api->reset = bava_reset;
-    
     k_mutex_init(dev->lock);
 
     data->counter=config->start_offset;
@@ -72,13 +81,11 @@ static int bava_counter_init(const struct device* dev)
     return 0;
 }
 
-#define #BAVA_COUNTER_DEFINE(inst) \
+#define BAVA_COUNTER_DEFINE(inst) \
     static const struct bava_counter_config config_##inst={\
         .start_offset=DT_INST_PROP(inst,start_offset),\
         .step_size=DT_INST_PROP(inst,step_size)};\
-    
-    static const struct bava_counter_data data_##inst;\
-
+    static const struct bava_counter_data data_##inst; \
     DEVICE_DT_INST_DEFINE(\
         inst,\
         bava_counter_init,\

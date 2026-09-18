@@ -1,0 +1,10 @@
+/{
+    soc{
+        fast_counter:counter_fast{
+            compatible = "bava,counter";
+            start-offset = <100>;
+            step-size=<5>;
+            status="okay";
+        };
+    };
+};
