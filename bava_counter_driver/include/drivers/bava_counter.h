@@ -8,56 +8,50 @@
 extern "C" {
 #endif
 
-typedef int(*bava_counter_get_t)(const struct device* dev,int* val);
-typedef int(*bava_counter_reset_t)(const struct device* dev);
+typedef int (*bava_counter_get_t)(const struct device *dev, int *val);
+typedef int (*bava_counter_reset_t)(const struct device *dev);
 
-
-struct bava_counter_api
-{
+struct bava_counter_api {
     bava_counter_get_t get;
     bava_counter_reset_t reset;
 };
 
-static inline int bava_counter_get(const struct device* dev,int* val)
+static inline int bava_counter_get(const struct device *dev, int *val)
 {
     const struct bava_counter_api *api;
 
-    if(!device_is_ready(dev))
-    {
+    if (!device_is_ready(dev)) {
         return -ENODEV;
     }
-    
-    *api=(const struct bava_counter_api*)dev->api;
 
-    if(api->get == NULL)
-    {
+    api = (const struct bava_counter_api *)dev->api;
+
+    if (api == NULL || api->get == NULL) {
         return -ENOSYS;
     }
 
-    return api->get(dev,val);
-
+    return api->get(dev, val);
 }
 
-static inline int bava_counter_reset(const struct device* dev)
+static inline int bava_counter_reset(const struct device *dev)
 {
     const struct bava_counter_api *api;
 
-    if(!device_is_ready(dev))
-    {
+    if (!device_is_ready(dev)) {
         return -ENODEV;
     }
 
-    *api=(const struct bava_counter_api*)dev->api;
+    api = (const struct bava_counter_api *)dev->api;
 
-    if(api->reset ==  NULL)
-    {
+    if (api == NULL || api->reset == NULL) {
         return -ENOSYS;
     }
 
     return api->reset(dev);
-
 }
 
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* ZEPHYR_INCLUDE_DRIVERS_BAVA_COUNTER_H_ */
