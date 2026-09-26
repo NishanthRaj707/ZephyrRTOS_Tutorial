@@ -1,0 +1,18 @@
+/*
+ * Devicetree overlay for Power Management (PM) & Wakeup Button
+ */
+
+/ {
+    aliases {
+        wakeup-button = &user_button_0;
+    };
+
+    gpio_keys {
+        compatible = "gpio-keys";
+
+        user_button_0: button_0 {
+            gpios = <&gpio0 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+            label = "Wakeup Button / BOOT Pin";
+        };
+    };
+};

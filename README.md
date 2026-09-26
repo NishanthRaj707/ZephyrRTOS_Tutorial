@@ -34,6 +34,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [ble](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/ble) | **Bluetooth Low Energy (BLE) Peripheral & GATT** | `bt_enable`, `bt_adv_start`, `BT_GATT_SERVICE_DEFINE`, `bt_gatt_attr_read` |
 | 📁 [bava_counter_driver](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/bava_counter_driver) | **Custom Out-of-Tree Device Driver** | `DEVICE_DT_INST_DEFINE`, `DT_INST_FOREACH_STATUS_OKAY`, YAML DTS bindings, custom driver APIs |
 | 📁 [dma](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/dma) | **Direct Memory Access (DMA) Transfer** | `dma_config`, `dma_start`, `dma_block_config`, ISR callbacks, `k_sem` synchronization |
+| 📁 [pm](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/pm) | **Power Management & Deep Sleep** | `sys_poweroff`, `RTC_DATA_ATTR`, `esp_sleep_get_wakeup_cause`, `esp_sleep_enable_timer_wakeup` |
 
 ---
 
