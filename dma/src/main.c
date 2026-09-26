@@ -48,8 +48,8 @@ int main(void)
     }
 
     struct dma_block_config block_config={
-        .source_address=(uint32_t)src_buffer,
-        .dest_address=(uint32_t)dest_buffer,
+        .source_address=(uint32_t)(uintptr_t)src_buffer,
+        .dest_address=(uint32_t)(uintptr_t)dest_buffer,
         .block_size=BUFFER_SIZE,
         .source_addr_adj = DMA_ADDR_ADJ_INCREMENT,
         .dest_addr_adj   = DMA_ADDR_ADJ_INCREMENT,
@@ -57,7 +57,6 @@ int main(void)
     };
 
     struct dma_config config={
-        .dma_channel         = CHANNEL_ID,
         .channel_direction   = MEMORY_TO_MEMORY,
         .source_data_size    = 1,
         .dest_data_size      = 1,
@@ -66,7 +65,7 @@ int main(void)
         .dma_callback        = dma_callback,
         .user_data           = NULL,
         .block_count         = 1,
-        .head_block          = &block_cfg,
+        .head_block          = &block_config,
         .complete_callback_en = 1,
     };
 

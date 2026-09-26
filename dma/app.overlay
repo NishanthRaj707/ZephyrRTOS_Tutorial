@@ -1,5 +1,9 @@
+&dma1 {
+    status = "okay";
+};
+
 / {
     aliases {
-        dma = &dma0;
+        dma = &dma1;
     };
 };
