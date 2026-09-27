@@ -35,6 +35,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [bava_counter_driver](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/bava_counter_driver) | **Custom Out-of-Tree Device Driver** | `DEVICE_DT_INST_DEFINE`, `DT_INST_FOREACH_STATUS_OKAY`, YAML DTS bindings, custom driver APIs |
 | 📁 [dma](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/dma) | **Direct Memory Access (DMA) Transfer** | `dma_config`, `dma_start`, `dma_block_config`, ISR callbacks, `k_sem` synchronization |
 | 📁 [pm](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/pm) | **Power Management & Deep Sleep** | `sys_poweroff`, `RTC_DATA_ATTR`, `esp_sleep_get_wakeup_cause`, `esp_sleep_enable_timer_wakeup` |
+| 📁 [wifi](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/wifi) | **Wi-Fi Station Mode & DHCP Networking** | `wifi_connect_req_params`, `net_mgmt`, `NET_EVENT_WIFI_CONNECT_RESULT`, `NET_EVENT_IPV4_ADDR_ADD` |
 
 ---
 
