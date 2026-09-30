@@ -54,8 +54,54 @@ static int tcp_function(void)
 
     struct zsock_addrinfo* res=NULL;
 
-    ret=getaddrinfo(TARGET)
+    ret=getaddrinfo(TARGET,PORT,&hints,&res);
+    if(ret<0)
+    {
+        LOG_ERR("Failed to get addr info : %d",ret);
+        return 0;
+    }
 
+    sock=zsock_socket(res->ai_family,res->ai_socktype,res->ai_protocol);
+
+    if(sock<0)
+    {
+        LOG_ERR("Failed to create socket : %d",sock);
+        zsock_freeaddrinfo(res);
+        return 0;
+    }
+
+    ret=zsock_connect(sock,res->ai_addr,res->ai_addrlen);
+    zsock_freeaddrinfo(res);
+    if(ret<0)
+    {
+        LOG_ERR("Failed to connect : %d",ret);
+        zsock_close(sock);
+        return 0;
+    }   
+    LOG_INF("Connected to server");
+
+    const char *msg = "Hello from Zephyr RTOS on ESP32!\n";
+    ret = zsock_send(sock, msg, strlen(msg), 0);
+    if (ret < 0) {
+        LOG_ERR("Failed to send data: %d", errno);
+        zsock_close(sock);
+        return -errno;
+    }
+    LOG_INF("Sent %d bytes", ret);
+
+    char buffer[1024];
+    ret = zsock_recv(sock, buffer, sizeof(buffer) - 1, 0);
+    if (ret < 0) {
+        LOG_ERR("Failed to receive data: %d", errno);
+        zsock_close(sock);
+        return -errno;
+    }
+    buffer[ret] = '\0';
+    LOG_INF("Received %d bytes: %s", ret, buffer);
+
+    zsock_close(sock);
+    return 0;
+    
 
 }
 
@@ -105,7 +151,7 @@ int main(void)
     
     LOG_INF("Network is ready for socket operations");
 
-    tcp_function()
+    tcp_function();
 
     while(1)
     {
