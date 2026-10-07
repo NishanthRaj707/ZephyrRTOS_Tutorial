@@ -1,0 +1,9 @@
+manifest:
+  remotes:
+    - name: tensorflow
+      url: https://github.com/tensorflow
+  projects:
+    - name: tflite-micro
+      remote: tensorflow
+      revision: r2.15.0
+      path: modules/lib/tflite-micro
