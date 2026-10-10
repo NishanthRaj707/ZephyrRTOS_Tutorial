@@ -37,6 +37,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [pm](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/pm) | **Power Management & Deep Sleep** | `sys_poweroff`, `RTC_DATA_ATTR`, `esp_sleep_get_wakeup_cause`, `esp_sleep_enable_timer_wakeup` |
 | 📁 [wifi](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/wifi) | **Wi-Fi Station Mode & DHCP Networking** | `wifi_connect_req_params`, `net_mgmt`, `NET_EVENT_WIFI_CONNECT_RESULT`, `NET_EVENT_IPV4_ADDR_ADD` |
 | 📁 [tflite](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/tflite) | **TensorFlow Lite Micro (TFLM) Edge AI** | `MicroInterpreter`, `MicroMutableOpResolver`, FlatBuffer quantized INT8 model inference, C++17 |
+| 📁 [sine_model_tflite](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/sine_model_tflite) | **End-to-End Sine Wave TinyML Pipeline** | Keras training, INT8 quantization, `MicroInterpreter`, `sine_model.h`, C++17 |
 
 ---
 
