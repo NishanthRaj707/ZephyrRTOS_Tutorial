@@ -38,6 +38,7 @@ The tutorial modules are organized sequentially, building from basic hardware ab
 | 📁 [wifi](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/wifi) | **Wi-Fi Station Mode & DHCP Networking** | `wifi_connect_req_params`, `net_mgmt`, `NET_EVENT_WIFI_CONNECT_RESULT`, `NET_EVENT_IPV4_ADDR_ADD` |
 | 📁 [tflite](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/tflite) | **TensorFlow Lite Micro (TFLM) Edge AI** | `MicroInterpreter`, `MicroMutableOpResolver`, FlatBuffer quantized INT8 model inference, C++17 |
 | 📁 [sine_model_tflite](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/sine_model_tflite) | **End-to-End Sine Wave TinyML Pipeline** | Keras training, INT8 quantization, `MicroInterpreter`, `sine_model.h`, C++17 |
+| 📁 [mcc](file:///home/bava/Desktop/ZephyrRTOS_Tutorial/mcc) | **TinyML Multi-Class Orientation Classification** | 3D accelerometer classification, Keras training, INT8 quantization, `MicroInterpreter`, `mcc_model.h`, C++17 |
 
 ---
 
